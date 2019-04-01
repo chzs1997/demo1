@@ -2,7 +2,9 @@ package com.winterchen.controller;
 
 import com.winterchen.conf.MyWebAppConfigurer;
 import com.winterchen.model.Manager;
+import com.winterchen.service.DonationService;
 import com.winterchen.service.ManagerService;
+import com.winterchen.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author: liuzipan
@@ -22,6 +25,12 @@ import java.util.HashMap;
 public class ManagerController {
     @Autowired
     private ManagerService managerService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private DonationService donationService;
 
     /*
     *
@@ -96,5 +105,15 @@ public class ManagerController {
         // 移除session
         session.removeAttribute(MyWebAppConfigurer.SESSION_KEY);
         return 1;
+    }
+
+    /*
+    * 近一周用户注册量
+    * */
+    @ResponseBody
+    @RequestMapping(value = "/findUserAmountLastWeek")
+    public Object findUserAmountLastWeek(){
+        Map<Integer,Integer> hashMap =  userService.findUserAmountLastWeek();
+        return hashMap;
     }
 }

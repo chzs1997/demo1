@@ -10,20 +10,14 @@ jQuery(document).ready(function ($) {
         data: {},
         async: false,
         success: function f(data) {
-            var managerName = data.managerName;
-            if(managerName == "尚未登陆"){
-                out_login();
-            }
-            else{
-                var managerName = managerName;
-                var gender = data.managerGender;
-                var identity = data.managerIdentity;
-                if(managerName != null){
-                    $("#username_navigator").text(managerName);
-                    $("#username_right").text(managerName);
-                    $("#userIdentity_right").text(identity);
-                }
-            }
+           var donationAmountLastMonth = data.donationAmountLastMonth;
+           var userAmountLastMonth = data.userAmountLastMonth;
+           var donationAmountTotal = data.donationAmountTotal;
+           var userAmountTotal = data.userAmountTotal;
+           $("#donationAmountLastMonth").text("RMB "+donationAmountLastMonth);
+           $("#userAmountLastMonth").text(userAmountLastMonth);
+           $("#donationAmountTotal").text("RMB "+donationAmountTotal);
+           $("#userAmountTotal").text(userAmountTotal)
         },
         error: function f() {
         }

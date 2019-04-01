@@ -5,7 +5,9 @@ import com.winterchen.model.UserDomain;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface UserDao {
@@ -71,4 +73,10 @@ public interface UserDao {
      * 累计注册用户数
      */
     int findAmountTotal();
+
+    /*
+     * 近一周用户注册量
+     * */
+    @SuppressWarnings("unchecked")
+    Map<String,Integer> findUserAmountLastWeek();
 }

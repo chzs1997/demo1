@@ -4,6 +4,10 @@ import com.github.pagehelper.PageInfo;
 import com.winterchen.model.UserDomain;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 /**
  * Created by Administrator on 2018/4/19.
@@ -61,4 +65,9 @@ public interface UserService {
      * 累计注册用户数
      */
     int findAmountTotal();
+
+    /*
+     * 近一周用户注册量
+     * */
+    Map<Integer,Integer> findUserAmountLastWeek();
 }

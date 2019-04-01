@@ -2,13 +2,16 @@ package com.winterchen.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.winterchen.dao.MapSessionMapper;
 import com.winterchen.dao.UserDao;
 import com.winterchen.model.UserDomain;
 import com.winterchen.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/8/16.
@@ -18,6 +21,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;//这里会报错，但是并不会影响
+
+    @Autowired
+    MapSessionMapper mapSessionMapper;
 
     /*注册*/
     @Override
@@ -115,5 +121,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public int findAmountTotal() {
         return userDao.findAmountTotal();
+    }
+
+    @Override
+    public Map<Integer, Integer> findUserAmountLastWeek() {
+        Map<Integer,Integer> mapAmount = mapSessionMapper.findUserAmountLastWeek();
+        return mapAmount;
     }
 }

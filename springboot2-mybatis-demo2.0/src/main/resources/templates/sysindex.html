@@ -234,7 +234,7 @@
                     <div class="card">
                         <div class="card-block">
                             <div class="text-left report1-cont">
-                                <h2 class="font-light m-b-0" id="AmountLastMonth"><i class="ti-arrow-up text-success"></i>RMB 9,220</h2>
+                                <h2 class="font-light m-b-0" id="donationAmountLastMonth"><i class="ti-arrow-up text-success"></i>RMB 9,220</h2>
                             </div>
                             <p><small>上个月捐赠金额</small></p>
                         </div>
@@ -244,7 +244,7 @@
                     <div class="card">
                         <div class="card-block">
                             <div class="text-left report1-cont">
-                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-danger"></i> 5,530</h2>
+                                <h2 class="font-light m-b-0" id="userAmountLastMonth"><i class="ti-arrow-up text-danger"></i> 5,530</h2>
                             </div>
                             <!--<span class="text-danger">43%</span>-->
                             <!--<div class="progress">-->
@@ -258,7 +258,7 @@
                     <div class="card">
                         <div class="card-block"> 
                             <div class="text-left report1-cont">
-                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-warning"></i> RMB 3,620</h2>
+                                <h2 class="font-light m-b-0" id="donationAmountTotal"><i class="ti-arrow-up text-warning"></i> RMB 3,620</h2>
                             </div>
                             <p><small>累积捐赠金额</small></p>
                         </div>
@@ -268,7 +268,7 @@
                     <div class="card">
                         <div class="card-block"> 
                             <div class="text-left report1-cont">
-                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 82,600</h2>
+                                <h2 class="font-light m-b-0" id="userAmountTotal"><i class="ti-arrow-up text-info"></i> 82,600</h2>
                             </div>
                             <p><small>累计注册用户数</small></p>
                         </div>
@@ -285,8 +285,6 @@
                         </div>
                         <div class="card-content">
                             <h4 class="title">近一周用户注册量</h4>
-                            <!--<p class="">-->
-                                <!--<span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>-->
                         </div>
                         <div class="card-footer">
                             <div class="stats">
@@ -333,22 +331,6 @@
                     <div class="card card-c2">
                         <table class="table table-hover">
                           <thead>
-                            <!--<div class="dropdown pull-right menu-sett-card"> -->
-                                <!--<a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                                    <!--<i class="fa fa-ellipsis-v men"></i> -->
-                                <!--</a>-->
-                                <!--<ul aria-labelledby="notifications" class="dropdown-menu">-->
-                                    <!--<li>-->
-                                        <!--<a rel="nofollow" href="#" class="dropdown-item nav-link">编辑</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>-->
-                                    <!--</li> -->
-                                <!--</ul>-->
-                            <!--</div>-->
                             <tr>
                               <th>近期登陆用户</th>
                               <th>登陆时间</th>
@@ -539,6 +521,9 @@
 
     <!--登录状态检查-->
     <script src="static/static/js/system/userDetect.js"></script>
+
+    <!--首页状态检查-->
+    <script src="static/static/js/system/HomeSeralize.js"></script>
 </body>
 
 </html>

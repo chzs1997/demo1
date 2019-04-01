@@ -24,6 +24,23 @@
     <result property="userImg" column="U_IMG"/>
   </resultMap>
 
+    <resultMap id="userAmount" type="java.util.HashMap">
+        <result property="key" column = "week"/>
+        <result property="value" column = "num"/>
+    </resultMap>
+
+    <select id="findUserAmountLastWeek" resultMap="userAmount">
+        select t.date as week
+              ,count(*) num
+        from(
+        select date_format(create_time,"%Y%m%d") date
+        from schooluser
+        where datediff(now(),create_time) &lt;7
+        )t
+        group by t.date
+        order by t.date DESC
+    </select>
+
   <!--设置数据库表名-->
   <sql id="BASE_TABLE">
     schooluser
