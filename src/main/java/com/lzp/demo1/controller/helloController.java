@@ -16,7 +16,7 @@ public class helloController {
 
     @ResponseBody
     @RequestMapping(value = "/hello")
-    public Object hello(){
-        return "201512056";
+    public Object hello() {
+        return "20151205dfdfd";
     }
 }
